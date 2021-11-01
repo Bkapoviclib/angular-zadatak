@@ -1,0 +1,31 @@
+{
+  "korisnici": [
+    {
+      "id": "1",
+      "username": "bumbum32",
+      "ime": "Boris",
+      "prezime": "Vlaković",
+      "lozinka": "lokomotiva86",
+      "oib": "56103295849",
+      "drzava": "1"
+    },
+    {
+      "id": "2",
+      "username": "vlatko",
+      "ime": "Vlado",
+      "prezime": "Bujas",
+      "lozinka": "oujea",
+      "oib": "56103295849",
+      "drzava": "3"
+    },
+    {
+      "id": "3",
+      "username": "maci",
+      "ime": "Matija",
+      "prezime": "Bugar",
+      "lozinka": "pinkfloyd",
+      "oib": "56103295849",
+      "drzava": "4"
+    }
+  ]
+}

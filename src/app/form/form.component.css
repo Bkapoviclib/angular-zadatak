@@ -1,0 +1,30 @@
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+input {
+  color: rgb(218, 212, 212);
+}
+
+#master-detail-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: fit-content;
+}
+button {
+  margin: 5px;
+}
+table {
+  margin: 10px;
+  padding: 10px;
+  width: 600px;
+}
+
+.highlight {
+  background-color: #c2185b;
+}
+select {
+  color: rgb(218, 212, 212);
+}

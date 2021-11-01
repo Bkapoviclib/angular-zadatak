@@ -1,0 +1,10 @@
+{
+  "drzave": [
+    { "id": "1", "sifra_drzave": "191", "naziv_drzave": "Hrvatska" },
+    { "id": "2", "sifra_drzave": "360", "naziv_drzave": "Engleska" },
+    { "id": "3", "sifra_drzave": "004", "naziv_drzave": "Njemačka" },
+    { "id": "4", "sifra_drzave": "052", "naziv_drzave": "Italija" },
+    { "id": "5", "sifra_drzave": "402", "naziv_drzave": "Malta" },
+    { "id": "6", "sifra_drzave": "142", "naziv_drzave": "Portugal" }
+  ]
+}

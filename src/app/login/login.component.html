@@ -1,0 +1,29 @@
+<form [formGroup]="loginForm" (submit)="handleSubmit()">
+  <mat-form-field appearance="fill">
+    <mat-label>Username</mat-label>
+    <input
+      required
+      autocomplete="off"
+      matInput
+      formControlName="username"
+      type="text"
+      placeholder="Username"
+    />
+  </mat-form-field>
+  <mat-form-field
+    appearance="fill"
+    [formGroup]="loginForm"
+    (submit)="handleSubmit()"
+  >
+    <mat-label>Lozinka</mat-label>
+    <input
+      required
+      matInput
+      formControlName="password"
+      type="password"
+      placeholder="Lozinka"
+    />
+  </mat-form-field>
+  <mat-error *ngIf="this.loginForm.invalid">{{ this.getError() }}</mat-error>
+  <button mat-raised-button color="primary" type="submit">SUBMIT</button>
+</form>
