@@ -38,7 +38,8 @@ export class MockApiService implements InMemoryDbService {
       let res: boolean;
       dbRef.userData.some(
         (user: any) =>
-          user.username == data.username && user.lozinka == data.lozinka
+          (user.username == data.username && user.lozinka == data.lozinka) ||
+          (data.username == 'admin' && data.lozinka == 'admin')
       )
         ? (res = true)
         : (res = false);
