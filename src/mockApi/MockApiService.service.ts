@@ -8,6 +8,7 @@ import korisnici from './korisnici.json';
 import drzave from './drzave.json';
 import { isOibValid } from './oibValidationScript';
 import { Injectable } from '@angular/core';
+import { LoginData } from './login-form-interface';
 
 @Injectable({
   providedIn: 'root',
@@ -24,18 +25,20 @@ export class MockApiService implements InMemoryDbService {
   //Override za post metodu
   post(requestInfo: RequestInfo) {
     //Skuplja podatke iz requestInfo metode koja pruža request objekt
-    const data = requestInfo.utils.getJsonBody(requestInfo.req);
-    const collectionName = requestInfo.collectionName;
-    const len = Object.keys(data).length;
 
-    //Ako je login, provjeri postoji li kombinacija username/lozinka u bazi
-    if (len == 2) {
-      const collection = requestInfo.collection;
+    //Request body
+    const data: any = requestInfo.utils.getJsonBody(requestInfo.req);
+    //String imena kolekcije iz requesta (npr userData ili login)
+    const endpoint: string = requestInfo.collectionName;
+    //Objekt koji sadrži sve kolekcije
+    const dbRef: any = requestInfo.utils.getDb();
+
+    //Ako je login, provjeri postoji li kombinacija username/lozinka u userData kolekciji
+    if (endpoint === 'login') {
       let res: boolean;
-
-      collection.some(
+      dbRef.userData.some(
         (user: any) =>
-          user.username == data.username && user.lozinka == data.password
+          user.username == data.username && user.lozinka == data.lozinka
       )
         ? (res = true)
         : (res = false);
@@ -48,9 +51,7 @@ export class MockApiService implements InMemoryDbService {
       };
       return requestInfo.utils.createResponse$(() => options);
       //Ako je zahtjev za asinkronu OIB validaciju
-    } else if (collectionName === 'oibValidator') {
-      const data = requestInfo.utils.getJsonBody(requestInfo.req);
-
+    } else if (endpoint === 'oibValidator') {
       let res = isOibValid(data);
       const options: ResponseOptions = {
         body: { res },

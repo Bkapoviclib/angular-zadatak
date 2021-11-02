@@ -78,7 +78,7 @@ export class FormComponent implements OnInit {
   //Dohvaća error za asinkronu oib validaciju
   getError() {
     if (this.detailsForm.hasError('required', 'oib')) {
-      return 'You must enter a value';
+      return 'Molimo unesite OIB';
     }
     return this.detailsForm.hasError('oibError', 'oib')
       ? 'Neispravan OIB!'

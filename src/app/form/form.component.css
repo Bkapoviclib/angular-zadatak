@@ -28,3 +28,8 @@ table {
 select {
   color: rgb(218, 212, 212);
 }
+#dialog-div {
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+}

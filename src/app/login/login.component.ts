@@ -24,9 +24,9 @@ export class LoginComponent {
     //Ako je forma validna, post na mockApi sa vrijednostima iz forme
     if (this.loginForm.valid) {
       this.http
-        .post('api/userData/', {
+        .post('api/login/', {
           username: this.loginForm.value.username,
-          password: this.loginForm.value.password,
+          lozinka: this.loginForm.value.password,
         })
         //Mock api vraća true ili false, po uspjehu stavi username u session storage
         // i route na formu
