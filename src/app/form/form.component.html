@@ -115,7 +115,6 @@
   </form>
 
   <table
-    *ngIf="dataSource.length > 0"
     #myTable
     mat-table
     [dataSource]="dataSource"
@@ -152,5 +151,3 @@
     ></tr>
   </table>
 </div>
-
-{{ this.current_id }}

@@ -91,7 +91,6 @@ export class FormComponent implements OnInit {
     this.dataSource.map((user: any) => {
       if (user.id > currentMax) {
         currentMax = parseInt(user.id);
-      } else {
       }
       return currentMax;
     });
@@ -101,9 +100,8 @@ export class FormComponent implements OnInit {
   //Pokreće create mod, i stvara prazno polje na dnu tablice za preview podataka
   //(Ako se klikne van polja ono nestaje)
   createUser() {
-    this.isCreatingNewUser = true;
     let id = this.generateId().toString();
-    this.dataSource.push({
+    let emptyUserWithFreshId = {
       id: id,
       username: '',
       ime: '',
@@ -111,16 +109,11 @@ export class FormComponent implements OnInit {
       lozinka: '',
       oib: '',
       drzava: '',
-    });
-    this.detailsForm.setValue({
-      id: id,
-      username: '',
-      ime: '',
-      prezime: '',
-      lozinka: '',
-      oib: '',
-      drzava: '',
-    });
+    };
+    this.isCreatingNewUser = true;
+
+    this.dataSource.push(emptyUserWithFreshId);
+    this.detailsForm.setValue(emptyUserWithFreshId);
     this.current_id = parseInt(id);
 
     this.detailsForm.setValue(this.getCurrentElement());
