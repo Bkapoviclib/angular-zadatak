@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -33,7 +33,7 @@ export class LoginComponent {
         .subscribe((message: any) => {
           if (message.res) {
             sessionStorage.setItem('username', this.loginForm.value.username);
-            this.router.navigate(['/app-form']);
+            this.router.navigate(['/app-crud-container']);
           } else {
             this.loginForm.setErrors({ invalidLogin: 'invalid login' });
           }

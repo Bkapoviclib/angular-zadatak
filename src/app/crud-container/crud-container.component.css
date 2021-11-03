@@ -1,0 +1,7 @@
+#master-detail-container {
+  border: 2px solid #c2185b;
+  display: flex;
+  flex-direction: row;
+
+  width: fit-content;
+}

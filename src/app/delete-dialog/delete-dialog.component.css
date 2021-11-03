@@ -2,3 +2,11 @@ button {
   height: 200px;
   width: 300px;
 }
+.customPanelClass {
+  display: flex;
+  flex-direction: column;
+}
+div#dialog-div.mat-dialog-actions {
+  display: flex;
+  flex-direction: column;
+}

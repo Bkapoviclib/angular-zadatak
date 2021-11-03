@@ -14,20 +14,24 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
-import { FormComponent } from './form/form.component';
-import { HomeComponent } from './home/home.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { CrudContainerComponent } from './crud-container/crud-container.component';
+import { TableComponent } from './crud-container/table/table.component';
+import { FormComponent } from './crud-container/form/form.component';
+import { WildcardRouteComponent } from './wildcard-route/wildcard-route.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    FormComponent,
-    HomeComponent,
     DeleteDialogComponent,
+    CrudContainerComponent,
+    TableComponent,
+    FormComponent,
+    WildcardRouteComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,12 @@
 <div id="dialog-div" mat-dialog-actions>
-  <h1 mat-dialog-title>Jeste li sigurni da želite obrisati korisnika?</h1>
-  <button mat-raised-button [mat-dialog-close]="false">Ne</button>
-  <button mat-raised-button color="primary" [mat-dialog-close]="true">
-    Da
-  </button>
+  <h1 mat-dialog-title>{{ data.title }}</h1>
+  <div>{{ data.message }}</div>
+  <div>
+    <button *ngIf="data.noText" mat-raised-button [mat-dialog-close]="false">
+      {{ data.noText }}
+    </button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="true">
+      {{ data.yesText }}
+    </button>
+  </div>
 </div>

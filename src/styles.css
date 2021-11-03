@@ -12,3 +12,10 @@ body {
   justify-content: center;
   background-color: rgb(51, 49, 49);
 }
+#dialog-div.mat-dialog-actions {
+  display: flex;
+  flex-direction: column;
+}
+#dialog-div.button {
+  margin: 10px;
+}

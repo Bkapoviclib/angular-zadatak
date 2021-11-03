@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
+  selector: 'app-wildcard-route',
+  templateUrl: './wildcard-route.component.html',
+  styleUrls: ['./wildcard-route.component.css'],
 })
-export class HomeComponent implements OnInit {
+export class WildcardRouteComponent implements OnInit {
   constructor(private router: Router) {}
-  routeToLogin(): void {
+
+  goToLogin() {
     this.router.navigate(['/app-login']);
   }
   ngOnInit(): void {}

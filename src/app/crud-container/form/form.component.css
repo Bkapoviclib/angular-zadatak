@@ -8,6 +8,9 @@ form {
 input {
   color: rgb(218, 212, 212);
 }
+input:disabled {
+  background-color: black;
+}
 
 #master-detail-container {
   border: 2px solid #c2185b;
@@ -27,9 +30,6 @@ table {
   min-height: fit-content;
 }
 
-.highlight {
-  background-color: #c2185b;
-}
 select {
   color: rgb(218, 212, 212);
 }

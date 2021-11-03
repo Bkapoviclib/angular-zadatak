@@ -7,5 +7,5 @@ import { DialogData } from './form-dialog-model';
   templateUrl: 'delete-dialog.component.html',
 })
 export class DeleteDialogComponent {
-  constructor(@Inject(MAT_DIALOG_DATA) data: DialogData) {}
+  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {}
 }

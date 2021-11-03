@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Obrada korisničkih podataka</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div id="master-detail-container">
+  <app-form
+    [formValue]="formData"
+    [current_id]="current_id"
+    [dataSource]="dataSource"
+    [drzave]="drzave"
+    (newDataSourceEvent)="updateDataSource($event)"
+    (currentIdUpdate)="updateCurrentId($event)"
+  ></app-form>
+  <app-table
+    [current_id]="current_id"
+    (newDetailsFormUpdate)="updateForm($event)"
+    (currentIdUpdate)="updateCurrentId($event)"
+    [dataSource]="dataSource"
+  ></app-table>
+</div>

@@ -13,6 +13,7 @@ export class DialogService {
     return this.dialog
       .open(DeleteDialogComponent, {
         data,
+        panelClass: 'customPanelClass',
       })
       .afterClosed();
   }

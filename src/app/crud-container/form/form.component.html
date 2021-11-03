@@ -1,0 +1,120 @@
+<form [formGroup]="detailsForm">
+  <mat-form-field appearance="fill">
+    <mat-label>Username</mat-label>
+    <input
+      [readonly]="this.current_id == 0"
+      (keyup)="handleChange('username')"
+      required
+      autocomplete="off"
+      matInput
+      formControlName="username"
+      type="text"
+      placeholder="Username"
+    />
+  </mat-form-field>
+  <input type="hidden" formControlName="id" />
+  <mat-form-field appearance="fill">
+    <mat-label>Ime</mat-label>
+    <input
+      [readonly]="this.current_id == 0"
+      (keyup)="handleChange('ime')"
+      required
+      autocomplete="off"
+      matInput
+      formControlName="ime"
+      type="text"
+      placeholder="Ime"
+    />
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Prezime</mat-label>
+    <input
+      [readonly]="this.current_id == 0"
+      (keyup)="handleChange('prezime')"
+      required
+      autocomplete="off"
+      matInput
+      formControlName="prezime"
+      type="text"
+      placeholder="Prezime"
+    />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Lozinka</mat-label>
+    <input
+      [readonly]="this.current_id == 0"
+      required
+      autocomplete="off"
+      matInput
+      formControlName="lozinka"
+      type="text"
+      placeholder="Lozinka"
+    />
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>OIB</mat-label>
+    <input
+      [readonly]="this.current_id == 0"
+      maxlength="11"
+      required
+      autocomplete="off"
+      matInput
+      formControlName="oib"
+      type="text"
+      placeholder="OIB"
+    />
+    <mat-error *ngIf="this.detailsForm.invalid">{{
+      this.getError()
+    }}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Država</mat-label>
+    <select
+      [ngModel]
+      matInput
+      matNativeControl
+      required
+      formControlName="drzava"
+      placeholder="Država"
+    >
+      <option value="" disabled selected>Izaberite državu</option>
+      <option
+        [disabled]="this.current_id == 0"
+        *ngFor="let drzava of drzave"
+        [value]="drzava.id"
+      >
+        {{ drzava.sifra_drzave }}-{{ drzava.naziv_drzave }}
+      </option>
+    </select>
+  </mat-form-field>
+  <div crud-button-container>
+    <button
+      [disabled]="this.current_id == 0"
+      mat-raised-button
+      color="primary"
+      (click)="saveUserDataToServer()"
+    >
+      Spremi
+    </button>
+    <button
+      [disabled]="this.current_id == 0"
+      mat-raised-button
+      color="primary"
+      (click)="deleteRow()"
+    >
+      Izbriši
+    </button>
+    <button
+      [disabled]="isCreatingNewUser"
+      mat-raised-button
+      color="primary"
+      (click)="enableCreateMode()"
+    >
+      Stvori novog korisnika
+    </button>
+  </div>
+</form>
+{{ this.current_id }}
+{{ this.detailsForm.value.id }}

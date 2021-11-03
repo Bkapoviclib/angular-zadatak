@@ -1,0 +1,23 @@
+.highlight {
+  background-color: #c2185b;
+}
+table {
+  flex: 1;
+  margin: 10px;
+  padding: 10px;
+  min-width: 400px;
+  min-height: fit-content;
+}
+
+select {
+  color: rgb(218, 212, 212);
+}
+#dialog-div {
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+}
+
+table {
+  height: min-content;
+}
