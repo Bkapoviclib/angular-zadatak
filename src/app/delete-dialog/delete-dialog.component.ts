@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { DialogData } from './form-dialog-model';
+import { DialogData } from './form-dialog-interface';
 
 @Component({
   selector: 'delete-dialog-component',

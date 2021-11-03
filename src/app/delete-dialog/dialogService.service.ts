@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 import { DeleteDialogComponent } from './delete-dialog.component';
-import { DialogData } from './form-dialog-model';
+import { DialogData } from './form-dialog-interface';
 @Injectable({
   providedIn: 'root',
 })
