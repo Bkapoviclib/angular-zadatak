@@ -30,7 +30,6 @@ export class TableComponent {
     this.newDataSourceEvent.emit(value);
   }
   updateFormValue(value: any) {
-    console.log(value);
     this.newDetailsFormUpdate.emit(value);
   }
   updateCurrentId(value: any) {
